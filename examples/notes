@@ -12,4 +12,4 @@
     - typeof
     - arrays vs objects
 - arrays are almost objects
-- this and bind
+= this and bind
