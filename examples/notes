@@ -1,8 +1,9 @@
 - , param name - better for source controll around angular modules
 - http://stackoverflow.com/questions/7696747/call-asynchronous-function-inside-for-loop
 - for in and hasOwnProperty
-- behavior of this
+= behavior of this
 - prototypical inheritance
-- new keyword http://stackoverflow.com/questions/1646698/what-is-the-new-keyword-in-javascript
+= new keyword http://stackoverflow.com/questions/1646698/what-is-the-new-keyword-in-javascript
 = implicit semicolons
+- js gibberish from wykop
 - links and sources (mdn)
