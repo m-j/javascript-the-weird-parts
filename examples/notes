@@ -7,6 +7,9 @@
 = implicit semicolons
 / js gibberish from wykop
 - links and sources (mdn)
-- reference vs value types
+- type system
+    - reference vs value types
+    - typeof
+    - arrays vs objects
 - arrays are almost objects
 - this and bind
