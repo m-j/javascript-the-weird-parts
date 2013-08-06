@@ -5,7 +5,8 @@
 - prototypical inheritance
 = new keyword http://stackoverflow.com/questions/1646698/what-is-the-new-keyword-in-javascript
 = implicit semicolons
-- js gibberish from wykop
+/ js gibberish from wykop
 - links and sources (mdn)
 - reference vs value types
 - arrays are almost objects
+- this and bind
