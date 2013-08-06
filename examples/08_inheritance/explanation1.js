@@ -1,3 +1,5 @@
+var helpers = require('./helpers.js');
+
 /*
  ANSWER
  'Human'
@@ -7,24 +9,38 @@
  chain works.
  */
 
-function Character(name, strength, dexterity, intelligence){
+function Character(name, strength){
     this.name = name;
     this.strength = strength;
     this.healthPoints = strength * strength;
+}
+Character.prototype.walk = function(){
+    console.log('Walking...');
 }
 
 function Human(humansName){
     this.name = humansName;
 }
 
-Human.prototype = new Character('Human', 10);
+Human.prototype = new Character('Generic human', 10);
 Human.prototype.sayName = function(){
     console.log('My name is ' + this.name);
 }
 
-var arthas = new Human('Arthas');
-arthas.sayName();
+var boromir = new Human('Boromir');
 
-delete arthas.name;
+console.log("Boromir\'s own properties:")
+console.log(boromir);
+console.log('')
 
-arthas.sayName(); // ??? What will be printed to console now?
+console.log('Boromir\'s flattened object:')
+console.log(helpers.flattenObject(boromir));
+console.log('')
+
+console.log('Boromir\'s __proto__')
+console.log(boromir.__proto__)
+console.log('')
+
+console.log('Boromir\'s __proto__.__proto__')
+console.log(boromir.__proto__.__proto__)
+console.log('')

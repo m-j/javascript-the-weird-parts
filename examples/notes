@@ -7,3 +7,5 @@
 = implicit semicolons
 - js gibberish from wykop
 - links and sources (mdn)
+- reference vs value types
+- arrays are almost objects

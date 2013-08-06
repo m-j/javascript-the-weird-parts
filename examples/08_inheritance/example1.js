@@ -1,21 +1,25 @@
-function Character(name, strength, dexterity, intelligence){
+function Character(name, strength){
     this.name = name;
     this.strength = strength;
     this.healthPoints = strength * strength;
+}
+Character.prototype.walk = function(){
+    console.log('Walking...');
 }
 
 function Human(humansName){
     this.name = humansName;
 }
 
-Human.prototype = new Character('Human', 10);
+Human.prototype = new Character('Generic human', 10);
 Human.prototype.sayName = function(){
     console.log('My name is ' + this.name);
 }
 
-var arthas = new Human('Arthas');
-arthas.sayName();
+var boromir = new Human('Boromir');
 
-delete arthas.name;
+boromir.sayName();
 
-arthas.sayName(); // ??? What will be printed to console now?
+delete boromir.name;
+
+boromir.sayName(); // ??? What will be printed to console now?
