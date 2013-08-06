@@ -1,18 +1,36 @@
-var countdownTimer = {
-    count : 5,
-    interval : 500,
-    startCountdown : function(){
-        var handler = setInterval(function(){
-            console.log('Counting down... ' + this.count);
+/*
+If we really want to use function detached from object
+we can use bind.
+*/
 
-            this.count--;
-            if(countdownTimer < 1){
-                clearInterval(handler);
-            }
-        }, this.interval);
+var person = {
+    name : 'Rick',
+    surname : 'Grimes',
+    getFullName : function(){
+        return this.name + ' ' + this.surname;
     }
 }
 
-countdownTimer.startCountdown();
+var oldGetFullNameShort = person.getFullName;
+console.log(oldGetFullNameShort());
 
-// ? What's wrong with this code?
+// Let's assign method to variable to make it easier to call it...
+var getFullNameShort = person.getFullName.bind(person);
+
+console.log(getFullNameShort());
+
+/*
+How does it work ?
+By currying:
+*/
+
+Function.prototype.myBind = function(thisArg){
+    return function(){
+        this.apply(thisArg, arguments);
+    }
+}
+
+// Custom solution works as well...
+var myGetFullNameShort = person.getFullName.bind(person);
+
+console.log(myGetFullNameShort());
