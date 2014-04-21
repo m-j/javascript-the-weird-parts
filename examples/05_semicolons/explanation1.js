@@ -7,7 +7,7 @@
 */
 
 function createPerson(name){
-    return; // Semicolon implicitly inserted
+    return
     {
         name: name
     }

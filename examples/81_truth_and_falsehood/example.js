@@ -1,8 +1,7 @@
-var result =
-    (!(![]) + !"") * 5
+var result = (!(![]) + !"") * 5;
     // ??? What will be result of expression above?
 
-console.log(result)
+console.log(result);
 
 /*
     a) Nothing, execution error
