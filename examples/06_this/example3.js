@@ -11,13 +11,13 @@ var person = {
     }
 }
 
-var oldGetFullNameShort = person.getFullName;
-console.log(oldGetFullNameShort());
+var getFullName = person.getFullName;
+console.log(getFullName());
 
 // Let's assign method to variable to make it easier to call it...
-var getFullNameShort = person.getFullName.bind(person);
+var getFullNameBind = person.getFullName.bind(person);
 
-console.log(getFullNameShort());
+console.log(getFullNameBind());
 
 /*
 How does it work ?
@@ -25,12 +25,14 @@ By currying:
 */
 
 Function.prototype.myBind = function(thisArg){
+    var that = this;
+
     return function(){
-        this.apply(thisArg, arguments);
+        return that.apply(thisArg);
     }
 }
 
 // Custom solution works as well...
-var myGetFullNameShort = person.getFullName.bind(person);
+var myGetFullNameBind = person.getFullName.myBind(person);
 
-console.log(myGetFullNameShort());
+console.log(myGetFullNameBind());

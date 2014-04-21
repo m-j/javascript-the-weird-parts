@@ -6,7 +6,7 @@ var countdownTimer = {
             console.log('Counting down... ' + this.count);
 
             this.count--;
-            if(countdownTimer < 1){
+            if(this.count < 1){
                 clearInterval(handler);
             }
         }, this.interval);
